@@ -41,3 +41,12 @@ https://cppcon.org/class-2019-parallelism-cpu-gpu/
 
 https://www.researchgate.net/post/Concurrency_Vs_Parallelism
 
+## Einleitung (15min)
+
+**Parallelität, Multicore Systeme und deren Programmierung in C mit der OpenMP API**
+
+C ist Standard und die HW-nähe ist durchaus praktisch und effizient. Sehr explizit. Parallelität verlangt dadurch allerdings einiges, weil keine Abstraktion.
+Immer mehr (verschiedene) Aufgaben in einem Automobil => ~80 Steuergeräte in einem Auto und über 1 km CAN-Bus-Kabel!
+OpenMP macht den Einstieg sehr einfach, weil man letztendlich einfach ein paar Präprozessor- und Compiler-Direktiven einfügt und schon Multi-Core Fähigkeit hat.
+Im Auto bietet sich außerdem die moderne Multi-Core-Programmierung mit Threads und Scheduling an, weil man eben Multicores und Single-Speicher hat. Viele Aufgaben im Auto können (oder sogar müssen) auf die gleichen Daten zugreifen und unterschiedliche Befehle oder Aufgaben ableiten.
+Wichtig dabei: Multicore Programmierung und Parallelisierung sind Optimierungen! Man handelt sich ein gutes Stück Komplexität und zusätzliche Aufgaben ein: Race Conditions müssen beachtet werden, Abriegeln von Daten und ein Scheduling falls Task-basiert gearbeitet wird müssen implementiert werden. Bugs durch Parallelität sind äußerst schwierig zu finden und können echte Probleme bereiten. Daher: Nur Parallelisieren nachdem ein Profiling ergeben hat, dass es eine sinnvolle und notwendige Performance-Steigerung bringen kann!
