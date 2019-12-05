@@ -58,8 +58,12 @@ OpenMP macht den Einstieg sehr einfach, weil man letztendlich einfach ein paar P
 Im Auto bietet sich außerdem die moderne Multi-Core-Programmierung mit Threads und Scheduling an, weil man eben Multicores und Single-Speicher hat. Viele Aufgaben im Auto können (oder sogar müssen) auf die gleichen Daten zugreifen und unterschiedliche Befehle oder Aufgaben ableiten.
 Wichtig dabei: Multicore Programmierung und Parallelisierung sind Optimierungen! Man handelt sich ein gutes Stück Komplexität und zusätzliche Aufgaben ein: Race Conditions müssen beachtet werden, Abriegeln von Daten und ein Scheduling falls Task-basiert gearbeitet wird müssen implementiert werden. Bugs durch Parallelität sind äußerst schwierig zu finden und können echte Probleme bereiten. Daher: Nur Parallelisieren nachdem ein Profiling ergeben hat, dass es eine sinnvolle und notwendige Performance-Steigerung bringen kann!
 
+Hinführung passiert mit Reduzierung der Steuergeräte und nicht-möglicher höherer Taktung von CPU => Multi-Core => Parallelisierung => OpenMP
+Aufhören mit Erklärungen zu OpenMP und wie es funktioniert mit kurzem Beispiel!
+
 ## Übung (45min)
 
+- Übung 2 ggf. optional gestalten und Übung 1 ausbaubar machen wg. Zeitproblemen
 - Code mit STD/Chrono vorbereiten
   - Code zur Zeitmessung vorbereiten und Main erstellen mit Aufrufen von Algorithmen/Funktionen von Teilnehmern
 - CommandLine für Aufruf und Compile vorbereiten (compile options und linking beachten!)
@@ -85,4 +89,7 @@ Zur Vorbereitung:
 3. Auch einfach mal die STL parallel Implementierung testen f. zeitliche Vergleiche
 4. Verhalten von geschützten Daten und Laufzeit-Overhead anschauen, um Fragen in die Richtung beantworten zu können
 5. Classic AutoSAR
-   1. Multicore Ansätze
+   1. Multi-Core Ansätze
+6. Quintessenz ist Datengranularität und Schwierigkeit der Parallelisierung von Daten
+   1. Entweder vorneweg im Intro erzählen
+   2. Oder in der Übung 3 die Leute drauf stoßen lassen
