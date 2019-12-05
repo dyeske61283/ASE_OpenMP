@@ -4,6 +4,7 @@
 
 1. Einleitung (15 min)
 2. Übungsaufgaben (45 min)
+   1. Mit Visual Studio
 3. Nachbereitung/Diskussion (30 min)
 
 ## Ideen
@@ -14,6 +15,12 @@
 - OpenMP integrieren
 - Zeiten messen
 - Vergleichen und begründen/erklären
+- Paket für Moodle-Download schnüren
+  - Folien
+  - Handout
+  - Solution
+- Nur Handout ausdrucken
+
 
 ## Infos zu OpenMP
 
@@ -77,4 +84,5 @@ Zur Vorbereitung:
 2. Ergebnisse notieren (ggf. von zwei oder mehr verschiedenen Rechnern --> Configs notieren!)
 3. Auch einfach mal die STL parallel Implementierung testen f. zeitliche Vergleiche
 4. Verhalten von geschützten Daten und Laufzeit-Overhead anschauen, um Fragen in die Richtung beantworten zu können
-5. ???
+5. Classic AutoSAR
+   1. Multicore Ansätze
