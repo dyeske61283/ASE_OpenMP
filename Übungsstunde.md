@@ -48,6 +48,9 @@ https://cppcon.org/class-2019-parallelism-cpu-gpu/
 
 https://www.researchgate.net/post/Concurrency_Vs_Parallelism
 
+Für Übung 2:
+https://www.youtube.com/playlist?list=PLRqwX-V7Uu6bXUJvjnMWGU5SmjhI-OXef
+
 ## Einleitung (15min)
 
 **Parallelität, Multicore Systeme und deren Programmierung in C mit der OpenMP API**
