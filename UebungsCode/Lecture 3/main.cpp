@@ -1,7 +1,7 @@
 #include <iostream>
 #include <chrono>
 using namespace std;
-#define LENGTH 100000
+#define LENGTH 1000000
 int arr[LENGTH];
 constexpr int Runs = 10;
 
@@ -65,17 +65,17 @@ int main()
 		}
 		auto t1 = std::chrono::high_resolution_clock::now();
 		int j = partition(arr, 0, LENGTH - 1);// returns the pivot element
-//#pragma omp parallel sections
-//		{
-//#pragma omp section
-//			{
+#pragma omp parallel sections
+		{
+#pragma omp section
+			{
 				quickSort(arr, 0, j - 1);//Thread 1
-			//}
-//#pragma omp section
-			//{
+			}
+#pragma omp section
+			{
 				quickSort(arr, j + 1, LENGTH - 1);//Thread 2
-			//}
-		//}
+			}
+		}
 		
 		//quickSort(arr, 0, LENGTH - 1);
 
