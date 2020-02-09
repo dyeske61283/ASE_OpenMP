@@ -14,7 +14,6 @@ int main()
 	{
 		auto t1 = std::chrono::high_resolution_clock::now();
 
-		//Your Code is here
 		//Let's do a 100 generations of the game of life
 		for (int j = 0; j < 100; j++) {
 			gol.generate();

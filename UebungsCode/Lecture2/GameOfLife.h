@@ -3,6 +3,8 @@
 #include "Cell.h"
 #include <iostream>
 #include <vector>
+// Credits go to Daniel Shiffman
+// http://natureofcode.com
 
 class GameOfLife {
 
@@ -55,7 +57,7 @@ public:
 			}
 	}
 
-	// This is the easy part, just draw the cells, fill 255 for '1', fill 0 for '0'
+	// This is the easy part
 	void display() {
 		for (int i = 0; i < columns; i++) {
 			for (int j = 0; j < rows; j++) {
