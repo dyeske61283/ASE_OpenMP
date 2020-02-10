@@ -1,6 +1,5 @@
 #include <chrono>
 #include <iostream>
-#include <omp.h>
 
 constexpr int64_t UpperLimit = 2000000;
 constexpr int StepSize = 5;
@@ -27,12 +26,9 @@ int main()
 	for (int i = 0; i < Runs; i++)
 	{
 		auto t1 = std::chrono::high_resolution_clock::now();
+
+		value = ReallyIntenseWork();
 		
-		//Your Code is here
-		//#pragma omp parallel
-		//{
-			value = ReallyIntenseWork();
-		//}
 		auto t2 = std::chrono::high_resolution_clock::now();
 
 		auto duration = std::chrono::duration_cast<std::chrono::microseconds>(t2 - t1).count();
