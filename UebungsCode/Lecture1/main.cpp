@@ -28,7 +28,7 @@ int main()
 	{
 		auto t1 = std::chrono::high_resolution_clock::now();
 		
-		//Your Code is here
+		//Your Code goes here
 		//#pragma omp parallel
 		//{
 			value = ReallyIntenseWork();

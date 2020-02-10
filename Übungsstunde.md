@@ -31,7 +31,7 @@ Warum überhaupt OpenMP nutzen? Es gibt doch die parallelen Algorithmen in der S
 - Granularität und explizite Parallelisierung
 - Explizites tagging von Daten
 - Parallele Ausführung nur bei passenden Datensätzen/Größen
-- 
+
 
 Consists of:
   - Compiler directives

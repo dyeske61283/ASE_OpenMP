@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Übung OpenMP</title>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+        
+        <style>
+.task-list-item { list-style-type: none; } .task-list-item-checkbox { margin-left: -20px; vertical-align: middle; }
+</style>
+        <style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        
+        
+    </head>
+    <body class="vscode-light">
+        <h1 id="%c3%9cbung-openmp">Übung OpenMP</h1>
+<h2 id="intro">Intro</h2>
+<ol>
+<li>Übung 1: Parallelisierung von Addition</li>
+<li>Übung 2: Game of Life</li>
+<li>Übung 3: Quicksort - Parallelisierung mit Sections</li>
+</ol>
+<h2 id="%c3%9cbung-1-parallelisierung-von-addition">Übung 1 Parallelisierung von Addition</h2>
+<p><strong>Aufgaben:</strong></p>
+<p>Versuche eine optimale Parallelisierung der Addition zu erreichen. Spiele mit den Elementen von OpenMP und nimm die Ergebnisse auf.</p>
+<table>
+<thead>
+<tr>
+<th>Release</th>
+<th>Average Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td></td>
+</tr>
+<tr>
+<td>OpenMP</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Debug</th>
+<th>Average Time</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td></td>
+</tr>
+<tr>
+<td>OpenMP</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%c3%9cbung-2-game-of-life">Übung 2 Game of Life</h2>
+<p>Das Game of Life beschäftigt sich mit zellulären Automaten und ihrem Verhalten zu Nachbarn.
+Eine kurze Einleitung und die Spielregeln sind hier zu finden:
+<a href="https://natureofcode.com/book/chapter-7-cellular-automata/#chapter07_section6">Regeln zum Game of Life</a></p>
+<p>In dieser Lektion ist eine Implementierung zum Spiel gegeben.</p>
+<p><strong>Aufgaben:</strong></p>
+<p>Starte das GameOfLife für eine verschiedende Anzahl an Generationen, indem du die korrekten Funktionen aus dem bestehenden Code nutzt und in Main aufrufst. Versuche anschließend eine optimale Parallelisierung durchzuführen mit Elementen aus OpenMP. Notiere dir deine Herangehensweise und schreibe kurz heraus welche Stellen sich am ehesten für eine Parallelisierung eignen.</p>
+<table>
+<thead>
+<tr>
+<th>Release</th>
+<th>100</th>
+<th>10000</th>
+<th>25000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OpenMP</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th>Debug</th>
+<th>100</th>
+<th>10000</th>
+<th>25000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OpenMP</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="%c3%9cbung-3-quicksort---parallelisierung-mit-sections">Übung 3 Quicksort - Parallelisierung mit Sections</h2>
+<p><strong>Aufgaben:</strong></p>
+<p>Versuche eine optimale Parallelisierung des bereits vorimplementierten Quicksorts.
+Beachte dabei vorallem den möglichen Overhead durch die Erstellung von Threads!
+Probiere dabei die Laufzeit bei verschiedenen Arraygrößen aus.</p>
+<table>
+<thead>
+<tr>
+<th>Release</th>
+<th>1000</th>
+<th>10000</th>
+<th>50000</th>
+<th>100000</th>
+<th>500000</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Normal</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>OpenMP</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h2 id="tipps--tricks">Tipps &amp; Tricks</h2>
+<ol>
+<li>Daran denken, dass der omp.h Header auch zugreifbar ist</li>
+<li>Die OpenMP Elemente und eine Hilfe sind hier zu finden: <a href="https://www.openmp.org/wp-content/uploads/Intro_To_OpenMP_Mattson.pdf">https://www.openmp.org/wp-content/uploads/Intro_To_OpenMP_Mattson.pdf</a></li>
+<li>Infos zu Übung 2 sind auch hier zu finden: <a href="https://www.youtube.com/watch?v=tENSCEO-LEc&amp;t=108s">https://www.youtube.com/watch?v=tENSCEO-LEc&amp;t=108s</a></li>
+<li>Bei Fragen zu C++ Elementen und Membern: <a href="https://en.cppreference.com/w/">https://en.cppreference.com/w/</a> oder einfach melden</li>
+<li>Denke an Unterschiede zwischen Debug- und Release-Konfigurationen</li>
+<li>Frage dich auch das &quot;Warum&quot; hinter Ergebnissen und bestimmtem Verhalten</li>
+</ol>
+
+    </body>
+    </html>
