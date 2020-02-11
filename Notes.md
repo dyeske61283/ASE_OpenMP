@@ -69,9 +69,9 @@
 
 - CAN
 - FlexRay
-- Lim
+- Syntax und Terminology
 
-## Aufgaben von Group 3
+## Aufgaben von Group 3 zu Flexray
 
 **Fragen:**
 
@@ -91,7 +91,7 @@
 3. Two channels (A & B)
 4. No, it is not since most configurations involve dual channels or star topologies
 5. Divide traffic between channels and distribute/connect participants to different channels to divide listening tasks // Redundancy
-6. Communication distribution and clustering // redundancy (when using 2-star configurations)
+6. Communication distribution and clustering // redundancy (when using 2-star configurations), Verstärker für Signale
 7. Bus:
             A     B     C     D     E
 Channel A   1     0     1     1     1
@@ -121,3 +121,48 @@ Star B      1     1     1     0     1
    2. TxD: Transfer Data - CC to BD: Transfer Data to BD for transmission
    3. TxEN: Transmit Data Enable Not - CC to BD: Enables the bus driver of the according channel to transmit data on TxD
 
+**Questions: Chapter 7**
+
+1. General: What does TDMA mean and why does TDMA-based communication require a synchronized time base? 
+2. What would be an alternative to a synchronization process of different, in principle equal partners?
+3. What is a Coldstarter?
+4. How many of these exist in a FlexRay cluster?
+5. What is the difference between a Leading Coldstarter and a Following Coldstarter?
+6. What is the startup procedure (see in particular fig. 7-10 and sections 7.2.4.1 to 7.2.4.3)?
+
+**Answers: Chapter 7**
+
+1. TDMA: Time division multiple access; Every participant needs to synchronize their communication slot with one another, to avoid bus collisions
+2. Just sequential sending of sender addresses (possibly hard-coded)
+3. Coldstart Node: Initialize Communication (Cluster startup only by them)
+4. There can only be as many coldstarters as static keyslots are available in the flexray (1023)
+5. A coldstart node that actively starts the cluster is also called a leading coldstart node. A coldstart node that
+integrates upon another coldstart node is also called a following coldstart node. 
+6. Startup -> Coldstart listen -> coldstart collision resolution -> consistency check -> normal active
+
+**Questions: Chapter 8**
+
+1. How is the time hierarchy structured?
+2. How does FlexRay understand global and local time?
+3. Why is the vMacrotick parameter node-specific, even if the macrotick should be the same
+length for all nodes?
+4. What are the two reasons why clocks are not synchronized?
+Information: In embedded systems, oscillators, such as a quartz oscillator, act as the frequency source for a clock. But even high-quality oscillators show deviations from their standard frequency. Reasons for these deviations are manufacturing tolerances, temperature fluctuations, aging and vibration.
+5. What is the basic synchronization process of FlexRay? At what point is which type of
+synchronization deviation corrected?
+6. Information: The basic structure of a communication cycle is described in section 5 on page
+100ff. In the static segment, which exists in every communication cycle, the same nodes always transmit at the same position (static slots), whereas in the dynamic part the transmission can vary from cycle to cycle. Only the static part is used as the base for the time measurement. Since there is a fixed schedule for the static part, the nodes know in advance when a message should arrive. This expected point in time is used as the basis for the measurement. Each node starts sending its message exactly at the ActionPoint when the ActionPoint is reached according to its own clock.
+The receiving nodes compare the time of the incoming message with their own time (see Error! Reference source not found.).
+
+**Answers: Chapter 8**
+
+1. Cycles, Macroticks and Microticks
+   1. Macrotick = n * Microtick
+   2. Cycles = m * Macrotick
+   3. Microticks == Processor frequency
+2. The local time is the time of the node's clock and is represented by the variables vCycleCounter, vMacrotick,
+and vMicrotick. vCycleCounter and vMacrotick shall be visible to the application. The update of
+vCycleCounter at the beginning of a cycle shall be atomic with the update of vMacrotick. The local time is based on the local view of the global time. Every node uses the clock synchronization algorithm to attempt to adapt its local view of time to the global time.
+3. vMactrotick is based on local time, therefore it needs to be node-specific
+4. The bus is decentralized and there is no time manager. The ECUs have their own oszillator and their progress on time would differ between the nodes.
+5. Sync process is two-staged: Sync-frames in predefined static slots to correct each nodes rate deviation and network idle time every 2nd cycle to correct each nodes offset.
