@@ -166,3 +166,15 @@ vCycleCounter at the beginning of a cycle shall be atomic with the update of vMa
 3. vMactrotick is based on local time, therefore it needs to be node-specific
 4. The bus is decentralized and there is no time manager. The ECUs have their own oszillator and their progress on time would differ between the nodes.
 5. Sync process is two-staged: Sync-frames in predefined static slots to correct each nodes rate deviation and network idle time every 2nd cycle to correct each nodes offset.
+
+## Automotive Ethernet
+
+- kranke Latenzanforderungen (teils ≤ 10 µs!!)
+- Bei Ethernet neuer Physical Layer und neue Bausteine in Anwendungsschicht
+
+## AutoSAR
+
+
+## Interview Fragen / Vorbereitung
+
+Nur noch Reihenfolge überlegen mit Luft dazwischen für spontane Fragen!
