@@ -3,17 +3,16 @@
 #include <omp.h>
 
 constexpr int64_t UpperLimit = 2000000;
-constexpr int StepSize = 5;
 constexpr int Runs = 10;
 
 
-auto ReallyIntenseWork() -> int64_t
+auto ReallyIntenseWork() -> double
 {
-	int64_t number = 0;
+	double number = 0;
 
 	for (int64_t i = 0; i != UpperLimit; ++i)
 	{
-		number += StepSize;
+		number += sqrt(i * 2.5);
 	}
 
 	return number;
@@ -23,7 +22,8 @@ int main()
 {
 	//omp_set_num_threads(4);
 	int64_t average = 0;
-	int64_t value = 0;
+	double value = 0;
+
 	for (int i = 0; i < Runs; i++)
 	{
 		auto t1 = std::chrono::high_resolution_clock::now();
