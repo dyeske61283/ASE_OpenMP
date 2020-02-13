@@ -9,19 +9,13 @@ class GameOfLife {
 private:
 	constexpr static int w = 10;
 	int columns, rows;
-	std::vector<std::vector<Cell>> board;
+	Cell board[w][w];
 
 public:
 
 	GameOfLife() {
 		columns = w;
 		rows = w;
-		for (int i = 0; i < w; i++) {
-			board.push_back(std::vector<Cell>());
-			for (int j = 0; j < w; j++) {
-				board[i].push_back(Cell(i, j));
-			}
-		}
 	}
 
 	void generate() {

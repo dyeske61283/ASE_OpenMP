@@ -17,7 +17,11 @@ public:
 	Cell(int x_, int y_) {
 		x = x_;
 		y = y_;
-		srand(time(NULL));
+		state = rand() % 2;
+		previous = state;
+	}
+
+	Cell() : x(0), y(0) {
 		state = rand() % 2;
 		previous = state;
 	}

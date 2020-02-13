@@ -1,12 +1,13 @@
 #include <chrono>
 #include "GameOfLife.h"
 #include <iostream>
+#include <time.h>
 
 constexpr int Runs = 10;
 
 int main()
 {
-	//omp_set_num_threads(4);
+	srand(time(NULL));
 	int64_t average = 0;
 	GameOfLife gol;
 
